@@ -14,3 +14,15 @@ export const useCreateTask = () => {
     }
   })
 }
+
+const updateTask = (task: Task) => api.put<Task>(`/task/${task.id}`, task)
+
+export const useUpdateTask = () => {
+  const queryClient = useQueryClient()
+
+  return useMutation((task: Task) => updateTask(task), {
+    onSuccess: () => {
+      queryClient.invalidateQueries('tasks')
+    }
+  })
+}
