@@ -26,3 +26,15 @@ export const useUpdateTask = () => {
     }
   })
 }
+
+const deleteTask = (id: number) => api.delete<Task>(`/task/${id}`)
+
+export const useDeleteTask = () => {
+  const queryClient = useQueryClient()
+
+  return useMutation((id: number) => deleteTask(id), {
+    onSuccess: () => {
+      queryClient.invalidateQueries('tasks')
+    }
+  })
+}
