@@ -1,9 +1,9 @@
 import api from "../../config/api"
 import { useMutation, useQueryClient } from 'react-query'
 
-import { Task } from "../../interfaces/task"
+import { CreateTask, Task } from "../../interfaces/task"
 
-const createTask = (task: Task) => api.post<Task>("/task", task)
+const createTask = (task: CreateTask) => api.post<Task>("/task", task)
 
 export const useCreateTask = () => {
   const queryClient = useQueryClient()

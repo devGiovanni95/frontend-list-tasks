@@ -4,7 +4,6 @@ import { Button } from "@chakra-ui/button"
 import { useForm } from 'react-hook-form'
 import { useCreateTask } from "../../hooks/mutations/mutationTask"
 import { Heading, Flex, Box } from "@chakra-ui/layout"
-import TaskItem from "../taskItem"
 
 
 export default function TaskForm() {
