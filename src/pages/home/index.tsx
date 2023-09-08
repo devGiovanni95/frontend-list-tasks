@@ -2,6 +2,7 @@ import { Container, Heading } from "@chakra-ui/react";
 import Header from "../../components/header";
 import {useTasks} from "../../hooks/queries/useTasks";
 import TaskForm from "../../components/tasksForm";
+import TaskItem from "../../components/taskItem";
 
 export default function Home() {
 
