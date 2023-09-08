@@ -1,10 +1,10 @@
 import { Container } from "@chakra-ui/react";
 import Header from "../../components/header";
-import useTasks from "../../hooks/useTasks";
+import {useTasks} from "../../hooks/queries/useTasks";
 
 export default function Home() {
 
-  const { tasks } = useTasks()
+  const {data : tasks } = useTasks()
   
     return (
       <>
@@ -13,7 +13,7 @@ export default function Home() {
           <h1>Home</h1>
 
           <ul>
-            {tasks.map((task) => ( // percorrendo o array de tasks e renderizando cada uma delas
+            {tasks?.map((task) => ( // percorrendo o array de tasks e renderizando cada uma delas
               <li key={task.id}>{task.title}</li> // definindo a key como o id da task
             ))}
           </ul>
